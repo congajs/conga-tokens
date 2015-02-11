@@ -1,0 +1,40 @@
+{
+	"name": "conga-tokens",
+	"version": "0.0.1",
+	"description": "Generic Token Library For CongaJS",
+	"directories": {
+		"test": "test"
+	},
+	"main": "./index.js",
+	"scripts": {
+		"test": "mocha test/*.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/congajs/conga-tokens.git"
+	},
+	"keywords": [
+		"tokens",
+		"conga-tokens"
+	],
+	"author": {
+		"name": "Anthony Matarazzo"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"conga-framework": "*" ,
+		"conga-bass": "*" ,
+		"bass": "*" ,
+		"async": "*" ,
+		"q": "*"
+	},
+	"devDependencies": {
+		"mocha": "1.9.0"
+	},
+	"readmeFilename": "README.md",
+	"readme": "# conga-tokens [![Build Status](https://secure.travis-ci.org/congajs/conga-tokens.png)](http://travis-ci.org/congajs/conga-tokens)\n\n## Overview\n\nThis is a Node.js library which allows you to work with generic tokens in congajs.\n\n",
+	"bugs": {
+		"url": "https://github.com/congajs/conga-tokens/issues"
+	},
+	"homepage": "https://github.com/congajs/conga-tokens"
+}

@@ -1,0 +1,33 @@
+parameters:
+
+    # the bass connection and document name to use for token storage
+    tokens.bass.connection: mysql.default
+    tokens.bass.document.name: Token
+
+    # this is the event name to register your tags under, customizable so as to avoid conflicts
+    tokens.event.name: tokens.event
+
+    # the kernel listener constructor namespace path
+    tokens.kernel.listener.constructor: conga-tokens:listener/kernel-listener
+
+    # the token service constructor namespace path
+    tokens.service.constructor: conga-tokens:service/token-service
+
+    # control to toggle the token controller on or off
+    tokens.controller.enabled: true
+
+
+
+services:
+
+    # the kernel listener sets up token events and annotations
+    tokens.kernel.listener:
+        constructor: "%tokens.kernel.listener.constructor%"
+        tags:
+            - { name: kernel.event, event: kernel.compile, method: onKernelCompile }
+            - { name: kernel.event, event: kernel.pre_controller, method: onPreController, priority: -256 }
+
+    # the token service
+    tokens:
+        constructor: "%tokens.service.constructor%"
+        arguments: ['@service_container']
